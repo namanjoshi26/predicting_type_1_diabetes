@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592941785138.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "467103958",
+    "id" : "952092B4",
+    "lastKnownWriteTime" : 1592941459,
+    "last_content_update" : 1592941459,
+    "path" : "~/rstudio/predicting_type_1_diabetes/predicting_type2_diabetes (1).Rmd",
+    "project_path" : "predicting_type2_diabetes (1).Rmd",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

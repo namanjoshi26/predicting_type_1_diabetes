@@ -1,0 +1,39 @@
+---
+title: "predicting type 2 diabetes"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## R Markdown
+```{r}
+library(neuralnet)
+library(caret)
+library(tidyverse)
+select(diabetes, -Pregnancies)
+diabetes$Outcome <- as.factor(diabetes$Outcome)
+```
+pregnancy is removed because it has no relation with type 2 diabetes.
+```{r}
+rows <- createDataPartition(diabetes$Outcome,p=0.5,list=F,times=1)
+train <- diabetes[rows,]
+test <- diabetes[-rows,]
+```
+dataset is partitioned into training and test dataset.
+```{r}
+control <- trainControl(method="repeatedcv",number=2,repeats=2)
+model <- train(Outcome ~.,data=train, method = "ranger", trControl= control)
+model
+```
+The function trainControl generates parameters that further control how models are created, with possible values
+
+```{r}
+pred <- predict(model,test)
+confusionMatrix(pred, test$Outcome)
+```
+final output
+
+
